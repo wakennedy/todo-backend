@@ -3,7 +3,7 @@ development:
   clients:
     # Defines the default client. (required)
     default:
-      uri: mongodb+srv://dbUser:<password>@cluster0.7iiu0.mongodb.net/<dbname>?retryWrites=true&w=majority
+      uri: mongodb+srv://dbUser:<Ticking6>@cluster0.7iiu0.mongodb.net/<dbname>?retryWrites=true&w=majority
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       # database: todo_backend_development
