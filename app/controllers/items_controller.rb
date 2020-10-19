@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /items
   # GET /items.json
@@ -71,6 +72,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.fetch(:item, {})
+      params.require(:item).permit(:name, :description, :category)
     end
 end
