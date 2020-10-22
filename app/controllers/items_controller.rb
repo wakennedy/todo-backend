@@ -13,6 +13,8 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @item = Item.find(params[:id])
+    render json: @item.to_json(except: [:created_at, :updated_at])
   end
 
   # GET /items/new
@@ -57,11 +59,8 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    @item = Item.find(params[:id])
     @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
